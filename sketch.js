@@ -2,6 +2,7 @@
 var bubbles = [];
 var coloring = [];
 var arrow;
+var bubblecol;
 
 function preload() {
 
@@ -23,11 +24,14 @@ function setup() {
   coloring[9] = color(174, 31, 35);
   coloring[10] = color(85, 15, 14);
   coloring[11] = color(0, 0, 0);
+  
+ 
+
 
   for (var i = 0; i < 12; i++) {
     bubbles[i] = new Bubble(width / 3 + i * 30, height-300, color(200));
   }
-  // println(bubbles);l
+ 
 }
 
 
@@ -39,18 +43,50 @@ function draw() {
     bubbles[i].display();
   }
 
-}
-
-function mousePressed() {
-  for (var i = 0; i < bubbles.length; i++) {
-    for (var c = 0; c < coloring.length; c++) {
-      bubbles[i] = new Bubble(width / 3 + i * 30, height-300, coloring[i]);
-      bubbles[i].update(coloring[i]);
+ if (keyIsDown(LEFT_ARROW)) {
+  
+  for (var i = 0; i < 1; i++) {
+    // for (var c = 0; c < 1; c++) {
+      bubbles[i] = new Bubble(width / 3 + i * 30, height-300, coloring[0]);
+      // bubbles[1].update(color(237, 31, 36));
     }
+
   }
 
 
+ if (keyIsDown(RIGHT_ARROW)) {
+  
+  for (var i = 0; i < 1; i++) {
+    // for (var c = 0; c < 1; c++) {
+      bubbles[i] = new Bubble(width / 3 + i * 30, height-300, color(200));
+      // bubbles[1].update(color(237, 31, 36));
+    }
+  }
 }
+
+
+// function hightlight(){
+//   bublecol.style('coloring[0]');
+  
+// }
+
+// function unhightlight(){
+//   bublecol.style('color(200)');
+// }c
+
+// function data() {
+//   if (keyIsDown(A)) {
+  
+//   for (var i = 0; i < 1; i++) {
+//     // for (var c = 0; c < 1; c++) {
+//       bubbles[i] = new Bubble(width / 3 + i * 30, height-300, coloring[0]);
+//       // bubbles[1].update(color(237, 31, 36));
+//     }
+//   }
+// }
+
+
+// }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
