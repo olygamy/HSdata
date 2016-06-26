@@ -25,15 +25,11 @@ function setup() {
   coloring[10] = color(85, 15, 14);
   coloring[11] = color(0, 0, 0);
   
- 
-
-
   for (var i = 0; i < 12; i++) {
     bubbles[i] = new Bubble(width / 3 + i * 30, height-300, color(200));
   }
  
 }
-
 
 function draw() {
   background(255);
