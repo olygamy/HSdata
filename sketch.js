@@ -36,11 +36,15 @@ function setup() {
   for (var i = 0; i < 12; i++) {
     bubbles[i] = new Bubble(width / 3 + i * 33, height - 300, color(200));
   }
+
+
 }
 
 function getData(pm) {
+
   input = select('#pm25');
   pm = input.value();
+
   return pm;
 }
 
@@ -54,7 +58,7 @@ function getAlfa(colx, n, m, s) {
   }
 }
 
-function transit(endal, endsize, elseal, elsesize) {
+function transit(endal, endsize) {
  
   al = al + 1;
   if (al > endal) {
@@ -68,6 +72,7 @@ function transit(endal, endsize, elseal, elsesize) {
 }
 
 function draw() {
+  println("am here")
 
   background(255);
 
@@ -87,11 +92,15 @@ function draw() {
   if (getData(pm) > 10 && getData(pm) <= 20) {
     transit(255, 20);
     getAlfa(color(coloring[1], al), 0, 1, s)
+    
+    
   }
-
+ 
+  
   if (getData(pm) > 20 && getData(pm) <= 30) {
     transit(255, 20);
      getAlfa(color(coloring[2], al), 0, 2, s)
+    
   }
   
   if (getData(pm) > 30 && getData(pm) <= 40) {
@@ -99,9 +108,13 @@ function draw() {
     getAlfa(color(coloring[3], al), 0,3, s)
     }
   
+  
     if (getData(pm) > 40 && getData(pm) <= 50) {
     transit(255, 20);
     getAlfa(color(coloring[4], al), 0, 4, s)
+    
   }
+
+
 
 }
