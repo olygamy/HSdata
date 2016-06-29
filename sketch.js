@@ -25,7 +25,7 @@ function setup() {
 
 
   var button = select('#submit');
-  button.mousePressed(getData);
+  // button.mousePressed(getData);
 
   var input;
 
