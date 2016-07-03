@@ -1,32 +1,28 @@
-var  a=0;
+ var a = 0;
 
-function Kolo (x, y, size, col, alfa) {
-  this.x = x;
-  this.y = y;
-  this.col=col;
-  this.size=size;
+ function Kolo(x, y, size, col) {
+   
+   this.x = x;
+   this.y = y;
+   this.col = col;
+   this.size = size;
+   
+   this.display = function() {
 
-  this.alfa=alfa;
+     noStroke();
+     fill(this.col, a);
+     ellipse(this.x, this.y, this.size, this.size);
+   }
 
+   this.update = function(colb, sizeb) {
 
-  this.display = function() {
-    noStroke();
-    
-    fill(this.col, this.alfa);
-    ellipse(this.x, this.y, size, size);
-  }
+     this.colb = colb;
+     this.sizeb = sizeb;
 
+     noStroke();
+     fill(colb, a);
 
-  this.update = function(colb, a, newsize) {
-    this.alfa=a;
-    this.col=colb;
-    this.size=newsize;
-  // a=a+1;
-  //   if (a >255){
-  //     a=255;
-  //   }
-    fill(colb,a);
-  }
+     ellipse(this.x, this.y, this.sizeb, this.sizeb);
 
-
-}
+   }
+ }
